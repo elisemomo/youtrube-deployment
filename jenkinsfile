@@ -23,7 +23,7 @@ pipeline{
         stage("Docker Build & Push"){
             steps{
                 script{
-                   withDockerRegistry(credentialsId: 'Docker_hub', toolName: 'docker'){   
+                   withDockerRegistry(credentialsId: 'Docker_hub', toolName: 'Docker'){   
                        sh "docker build -t youtube-clone ."
                        sh "docker tag youtube-clone amukomelise/youtube-clone:latest "
                        sh "docker push mukomelise/youtube-clone:latest "
